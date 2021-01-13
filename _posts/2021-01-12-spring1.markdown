@@ -2,9 +2,9 @@
 layout: post
 title:  "Spring MVC project version 1"
 date:   2021-01-12 14:46:00 +0200
-description: Spring MVC를 이용하여 웹 페이지 제작 vo1 : Spring MVC을 이해하자
----
+description: 우선 Spring Mvc를 이용해서 웹 페이지를 만드는 걸 주로 했는데
 
+---
 우선 Spring Mvc를 이용해서 웹 페이지를 만드는 걸 주로 했는데
 
 기록으로 남긴건 항상 포토폴리오를 제외하고는 없었다.
