@@ -36,3 +36,5 @@ exclude:
 include: [_pages]
 
 remote_theme : artemsheludko/fresh
+
+theme: jekyll-theme-cayman
