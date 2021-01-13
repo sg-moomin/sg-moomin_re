@@ -1,0 +1,261 @@
+---
+layout: post
+title:  "Spring MVC project version 2"
+img: ""
+date:   2021-01-13 14:46:00 +0200
+description: 이번 포스팅에서는 eclipse로 웹 화면에서 hello world를 출력해볼 것이다. 
+---
+
+이번 포스팅에서는 eclipse로 웹 화면에서 hello world를 출력해볼 것이다. 
+
+사실 초기 셋팅이라고 생각하면 된다.
+
+---
+
+우선 Eclipse를 작동시켜서 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbU1rWB%2FbtqSNlw4FE3%2FovEaBb87TQwOtQOA580890%2Fimg.png)
+
+**file -> new -> Dynamic Web Project 클릭**
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb5c2GV%2FbtqSKMoqEB9%2FJJwvzkQLblABfcEuE2pid0%2Fimg.png)
+
+클릭했을 때 위와 같은 창이 뜨게 되는데 
+
+여기서 Project Name은 정말 자신이 원하는 프로젝트 이름을 작성하면 되는데 
+
+나는 sg\_moomin.tistory.demo 라고 제작하겠다.
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbGdJ2b%2FbtqSKMoqEFJ%2FdQHihctUKMzyZ58jce6sEk%2Fimg.png)
+
+아래처럼 project name은 위에 적은것처럼 만들 것이구 
+
+확인해야 하는 부분은 web module version인데 
+
+이거는 3.0이나 4.0이나 사실 크게 문제는 안되지만 
+
+대부분 자바 버전과 일치하는 웹 모듈 버전이 세팅되기 때문에 
+
+처음하는 사람이라면 손대지 않구 그냥 Next를 누르면 된다. 
+
+Next를 넘기다보면 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeEqQPh%2FbtqSELcG9hR%2FgLN0X26XWStXGAB6dyA0dk%2Fimg.png)
+
+이 페이지를 만나게 되는데 
+
+여기서 빨간색 박스를 무조건 클릭해주는 걸 추천한다. 
+
+저걸 클릭 안하면 web.xml 파일이 초기에 생성되지 않는다. 
+
+위에서 Finish를 클릭한 후에는 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFeY2I%2FbtqSIYQayuQ%2FEFVWHX5teHIWE8OjkK4wV1%2Fimg.png)
+
+위 처럼 프로젝트가 생성된 걸 확인할 수 있다. 
+
+근데 아무리 뒤져봐도 dispatcher-servlet.xml 파일은 눈에도 보이지 않을 것이다.
+
+그래서 우리는 직접 dispatcher-servlet.xml을 만들어 줄 것이다. 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEKUWH%2FbtqSDu3OB5z%2FM3PhXlZ1YWEhlLS44YC281%2Fimg.png)
+
+WEB-INF 폴더를 우클릭 한 후 **new -> Other 클릭**
+
+**단축키로는 ctrl + n**
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FN3ogR%2FbtqSIZBT7Z3%2F5uFMFNS6rC7AAWSAakFsyk%2Fimg.png)
+
+Spring -> Spring Bean Configuration File을 클릭하면 되는데
+
+---
+
+아마 STS가 설치되어 있지 않는 경우에는 Spring이라는 폴더가 없을 것이다. 
+
+그런 사람들은 STS를 설치하면 되는데 
+
+방법은 다양하지만 간편한 방법을 설명해주면 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F8D0Dk%2FbtqSEK6kuFo%2FMt8OgDBMDB5984tMP304HK%2Fimg.png)
+
+Help -> Eclipse Marketplace 클릭
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc8oTNp%2FbtqSIZveiir%2FDEBv4pqmBG3Djexso0jkW1%2Fimg.png)
+
+STS 입력 후 Go 클릭!
+
+그러면 Spring Tool들이 여러개 나올 것인데
+
+나는 Spring Tool 3을 이미 설치했기 때문에 Installed라고 나와있지만 
+
+Spring Tool을 설치 안했다면 설치하면 Eclipse에서도 Spring을 사용할 수 있다. 
+
+Eclipse를 이용하지 않고 STS를 사용하고 싶다면 Spring 사이트에 들어가서 
+
+STS 응용 프로그램을 설치해서 사용하면 된다. 
+
+그것도 또한 Eclipse에서 Spring을 사용하는 것과 다른 점이 없기 때문에 선택은 자유! 
+
+---
+
+다시 dispatcher-servlet.xml으로 넘어가면 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbnEcMl%2FbtqSDuQhodL%2FMHhmE7ehp7vnFb9Di7OwuK%2Fimg.png)
+
+File name에 dispatcher-servlet.xml을 기입 후 finish!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdGCSyT%2FbtqSELYuVf7%2FqZSodl3rX6l8bl9H6yz6NK%2Fimg.png)
+완료하면 이런 xml 파일이 생성될 것이다. 
+
+여기서 초기 셋팅을 할 것인데 
+
+하단에 Namespaces 클릭!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcv05a4%2FbtqSNmXsFEs%2FNQErIUKk3GUognu434c3Jk%2Fimg.png)
+
+Beans 말고는 아무것도 없다?!?
+
+이유는 아직 이 프로젝트에서는 spring mvc가 사용되고 있지 않기 때문!
+
+그래서 나는 maven을 이용해서 추가해줄 것이다. 
+
+우선 Maven을 프로젝트에 추가해준다. 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fnuw36%2FbtqSKMWFl3U%2Fkwjh67OsDkQ1JK6KY00A2K%2Fimg.png)
+프로젝트 우클릭 -> configure -> convert to maven project
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbonPWR%2FbtqSKMoPHzv%2F980KrkVTD3dNxkZHba4TLK%2Fimg.png)
+크게 수정할 건 없기 때문에 Finish!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQdkDk%2FbtqSKNgXdc3%2FSiJBYOzNiibpl1FH7TFUJ0%2Fimg.png)
+
+pom.xml이 생성된 걸 확인할 수 있다. 
+
+여기서 추가해줘야 하는 것들이 있는데 
+
+이전에 앞에서 maven은 빌드를 손쉽게 하기 위해 사용한다고 했던걸 기억한다면 
+
+pom.xml에서 자신이 사용하려는 라이브러리들을 추가해주면 된다. 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtLbIr%2FbtqSKLwGphE%2F3H4SNyDhYscvqvLhtuyw00%2Fimg.png)
+
+```
+  <dependencies>
+  		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.1.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+  </dependencies>
+```
+
+기본적으로 spring webmvc와 servlet-api를 추가해준다. 
+
+만약에 자신이 원하는 dependency를 추가했을 때 꼭!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcb7ioe%2FbtqSKM3pXn2%2F4TVQok5ReQI50OKKYomFc1%2Fimg.png)
+
+Maven -> Update Project 클릭!
+
+이걸 안해주면 내가 수정한 메이븐이 적용이 안된다. 
+
+업데이트가 끝난 후 dispatcher-servlet.xml -> Namespaces 확인!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbYuNMO%2FbtqSKMbd76f%2FXMTAvqo1U3LAXxc1T2USV0%2Fimg.png)
+
+위에 보이는 것처럼 spring mvc에 사용되는 namespcaes들이 사용되는 것을 볼 수 있다. 
+
+여기서 beans, mvc, context를 클릭!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnhQBO%2FbtqSGi9Jq5C%2F8iuJzIdPTFLGpstE5PRjg0%2Fimg.png)
+
+클릭하면 아래에 xsi 스키마가 추가된 걸 볼 수 있다. 
+
+이제 dispatcher-servlet에 코드를 추가해줄 것인데 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FntZRF%2FbtqSIYbW5fh%2FDHM9Kk37KalKshvoxzaSlK%2Fimg.png)
+
+위의 사진처럼 추가하는데 간략하게 설명을 붙이자면
+
+**mvc : annotation-driven**는 controller의 호출이나 필요한 bean 객체 설정을 편리하게 하기 위해 설정
+
+**context:component-scan**은 내가 사용하려는 특정 경로를 스캔해서 빈 인스턴트를 생성
+
+내가 사용한 경우를 보면 controller라는 패키지를 만들건데 
+
+controller/\*\* 를 하면 controller 패키지 안에 있는 모든 클레스들을 스캔하기 위해 작성해준다. 
+
+**viewResolver에서 prefix과 suffix으로 구분지어 놨는데 **
+
+prefix는 내가 view로 보여줄려는 파일들이 있는 위치 경로
+
+suffix은 파일 명 끝에 .jsp인 파일 전체를 선택
+
+이렇게 작성한 이유는 web.xml에서 나는 .jsp로 불러오지 않구 .do로 불러올 것이기 때문이다. 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbczitp%2FbtqSNlEd12S%2Ft7GIOKEySdzwb6rCglHNpk%2Fimg.png)
+자바 코드를 제작해주는데 
+
+controller라는 패키지 안에 자신이 제작하려는 자바 코드를 만들어 주면 된다.
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb6jyKz%2FbtqSGiItRvN%2FDt3nYEqwkNr6vW2MSQnn51%2Fimg.png)
+
+코드는 위에 처럼 작성해준다. 
+
+어노테이션을 이용해서 Controller라고 지정해주고 
+
+moomin이라고 맵핑을 하면 현재 class 파일을 호출 시 moomin으로 호출하면 된다.
+
+moomin 클래스 내 main.do라고 맵핑을 하면 moomin/main.do를 호출하면 main()이라는 메소드를 호출하게 된다.
+
+**즉 RequestMapping을 이용하게 되면**
+
+**mainController라는 클래스를 호출할 때 moomin을 불러오면 되고**
+
+**main()이라는 메소드를 호출하려면 moomin/main.do를 불러오면 해당 메소드에 대한 값을 반환해준다. **
+
+그리고 main이라는 매소드에서는 main/main을 반환해주는데
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbAN7sQ%2FbtqSDuCNd8o%2FhzkjmAVQWK3V6si7YcnTY1%2Fimg.png)
+**바로 내가 views/main/main.jsp 값을 반환해주기 위해 저렇게 작성해준다.**
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fefkiwy%2FbtqSSedhnwh%2FYvL9dfZThISZPmX3Vp4nDK%2Fimg.png)
+
+기본 셋팅을 확인하기 위해서 우선 main.jsp 파일을 간단하게 만들어준다.
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDBqyF%2FbtqSPGnOYLT%2F3H7rBdXp1Cao2lWAJCKdPk%2Fimg.png)
+
+이제 실행을 해볼 것인데 
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSzGxB%2FbtqSELRJ5qX%2Fd7UJO1Ko87b6ga7XpkAoM0%2Fimg.png)
+
+여기서 현재 나는 tomcat 9.0을 이용하고 있는 중이다.
+
+만약에 자신이 사용하고 있는 서버가 있다면 무관하지만 없다고 하면
+
+[tomcat.apache.org/download-90.cgi](https://tomcat.apache.org/download-90.cgi)
+
+위의 링크에서 톰켓을 다운 받은 후 server에 연결시켜주면 된다.
+
+처음 run on server를 시작했을 때!
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdk71vu%2FbtqSNk6o7H0%2FVKypwZF8fpirJEw8xHhouK%2Fimg.png)
+
+404 오류를 마주치게 되는데 이 문제는 현재 URL 경로가 틀린 것이다. 
+
+그렇다면 자바에서 입력했던 경로 **moomin/main.do** 를 연결해주면? main/main.jsp 파일이 호출될것이다.
+
+![springMvcimge2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbWgp0i%2FbtqSSdFsqoO%2FPv8x0F2mLiFwAcYrf7We31%2Fimg.png)
+
+이렇게 Hello World가 뜬다면 성공한 것이다.
+
+초기 셋팅이 완료된 것을 볼 수 있고
+
+다음 포스팅에서는 redirect를 이용해서 처음에 run on server 경로를 설정과 구조도 등
+
+다양한 내용을 포스팅 할 예정이다.
