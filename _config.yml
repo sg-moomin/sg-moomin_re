@@ -1,40 +1,32 @@
-# Profile information
-name: Fresh
-title: Fresh - Free Jekyll Theme
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sg-moomin.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+title: Cayman Blog Theme
+description: Cayman Blog Theme is a clean, responsive blogging theme for Jekyll and Gitlab/GitHub Pages.
+show_downloads: true
 
-# Social
-facebook: #Add your Facebook
-twitter: #Add your Twitter
-google-plus: #Add your Google+
-github: #Add your Github
+baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://sg-moomin.github.io/" # change this to the base hostname & protocol for your site
 
-# Contact form
-email: #your-email@domain.com
 
-# Comments
-discus-identifier: # Add your Disqus identifier
+google_analytics:
 
-# Paginate
-paginate: 5
-paginate_path: /page:num/
+# cayman-blog date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+cayman-blog:
+  date_format: "%b %-d, %Y"
 
-# Build settings
-markdown: kramdown
-gems:
-  - jekyll-feed
-  - jekyll-paginate
-exclude:
-  - Gemfile
-  - Gemfile.lock
-include: [_pages]
+theme: # leave it empty
 
-theme: jekyll-theme-cayman
+# social
+author: lorepirri
+image: /thumbnail-jumbo.png
+twitter:
+  username: lorepirri
 
-remote_theme : artemsheludko/fresh
+plugins:
+  - jekyll-target-blank
+
+target-blank:
+    rel: nofollow
+
+header_page_refs: ['now', 'about', 'contact']
+
+remote_theme : lorepirri/cayman-blog
