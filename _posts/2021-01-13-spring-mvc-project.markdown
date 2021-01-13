@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spring MVC를 이용하여 웹 페이지 제작 vo1 : Spring MVC을 이해하자"
+title:  "Spring MVC project version 1"
 date:   2021-01-13 14:46:00
 img:
 description: Spring MVC를 이용하여 웹 페이지 제작 vo1 : Spring MVC을 이해하자
@@ -18,7 +18,7 @@ description: Spring MVC를 이용하여 웹 페이지 제작 vo1 : Spring MVC을
 
 우선 Spirng MVC라는 말은 엄청 들었을것이라고 생각된다.
 
-[##_Image|kage@re9KF/btqSKMaNcB0/rFan6TZbyGkWcWokjiRl2k/img.png|alignCenter|data-origin-width="1746" data-origin-height="894" data-filename="blob" data-ke-mobilestyle="widthContent"|||_##]
+![springMvcimge1](https://blog.kakaocdn.net/dn/re9KF/btqSKMaNcB0/rFan6TZbyGkWcWokjiRl2k/img.png)
 
 위의 이미지는 실제 md 파일로 SpringMVC와 관련해서 이론적인 부분을 정리해놓은 파일이 있구 
 
@@ -42,7 +42,7 @@ Spirng은 대략 자바 프레임 워크로 웹 개발에 도움되는 것이라
 
 **그렇다면 MVC는 무엇일까?**
 
-[##_Image|kage@czzmGU/btqSIYWTCJ4/jiaSbBDjBqvBc7cnywy4r1/img.png|alignCenter|data-origin-width="797" data-origin-height="562" data-filename="blob" data-ke-mobilestyle="widthContent"|||_##]
+![springMvcimge1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FczzmGU%2FbtqSIYWTCJ4%2FjiaSbBDjBqvBc7cnywy4r1%2Fimg.png)
 
 **MVC는 말 그대로 Model, View, Controller이다.**
 
@@ -52,7 +52,7 @@ Spirng은 대략 자바 프레임 워크로 웹 개발에 도움되는 것이라
 
 아직 MVC 패턴에 대해 잘 이해가 안되기 때문에 사용자 입장에서 보도록 하자 
 
-[##_Image|kage@pYsnV/btqSKMBVz3h/b8kaYjceqRxaA57ZFCcTek/img.png|alignCenter|data-origin-width="600" data-origin-height="698" data-filename="blob" data-ke-mobilestyle="widthContent"|||_##]
+![springMvcimge1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpYsnV%2FbtqSKMBVz3h%2Fb8kaYjceqRxaA57ZFCcTek%2Fimg.png)
 
 **즉 사용자는 Controller을 조작하거나 무언가 요청을 했을 때!**
 
@@ -68,7 +68,7 @@ Spirng은 대략 자바 프레임 워크로 웹 개발에 도움되는 것이라
 
 이제 그러면 이론적인 부분으로 MVC에서 강조하는 Model, View, Controller에 대해 간단하게 알아보자!
 
-[##_Image|kage@bkcJ0h/btqSIZIjK11/MvbcUd3uR9xb0Lkt679HKk/img.png|alignCenter|data-origin-width="754" data-origin-height="582" data-filename="blob" data-ke-mobilestyle="widthContent"|||_##]
+![springMvcimge1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbkcJ0h%2FbtqSIZIjK11%2FMvbcUd3uR9xb0Lkt679HKk%2Fimg.png)
 
 위에 그림들로 설명했던 내용을 이해했다면 조금 쉽게 이론적인 부분도 이해가 될것이다. 
 
@@ -94,8 +94,7 @@ DispatcherServlet, Maven 라는 개념을 알아야 한다. 
 
 그래서 좀 더 이해를 돕기 위해 그림을 보여주면 
 
-[##_Image|kage@CH5f4/btqSASDwJ1y/ggNMKl8mPMHWdsyIkHO6Zk/img.png|alignCenter|data-origin-width="1251" data-origin-height="517" data-filename="blob" data-ke-mobilestyle="widthContent"|||_##]
-
+![springMvcimge1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCH5f4%2FbtqSASDwJ1y%2FggNMKl8mPMHWdsyIkHO6Zk%2Fimg.png)
 위의 그림을 보면 조금 이해가 될것이라고 생각된다. 
 
 **말 그대로 Http 요청이 들어왔을 때 DispacherServlet과 FrontController가 요청을 받아서 Controller에게 **
@@ -148,17 +147,6 @@ maven tool 자체에 관련된 설정을 담당하는 xml 파일이다.
 
 [mvnrepository.com/](https://mvnrepository.com/)
 
-[
-
-Maven Repository: Search/Browse/Explore
-
-Cayenne backend for Agrest Last Release on Nov 20, 2020
-
-mvnrepository.com
-
-
-
-](https://mvnrepository.com/)
 
  위의 사이트에서 직접 필요로 하는 빌드파일을 검색해서 넣어주면 끝이다.
 
