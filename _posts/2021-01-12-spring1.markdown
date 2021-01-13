@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Spring MVC project version 1"
-img: ""
-date:   2021-01-13 14:46:00 +0200
+date:   2021-01-12 14:46:00 +0200
 description: Spring MVC를 이용하여 웹 페이지 제작 vo1 : Spring MVC을 이해하자
 ---
 

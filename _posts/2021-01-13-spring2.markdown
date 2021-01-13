@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Spring MVC project version 2"
-img: ""
 date:   2021-01-13 14:46:00 +0200
 description: 이번 포스팅에서는 eclipse로 웹 화면에서 hello world를 출력해볼 것이다. 
 ---
