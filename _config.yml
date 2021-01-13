@@ -35,6 +35,6 @@ exclude:
   - Gemfile.lock
 include: [_pages]
 
-remote_theme : artemsheludko/fresh
-
 theme: jekyll-theme-cayman
+
+remote_theme : artemsheludko/fresh
