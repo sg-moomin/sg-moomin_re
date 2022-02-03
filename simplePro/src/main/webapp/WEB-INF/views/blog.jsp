@@ -18,7 +18,7 @@
 							<p class="breadcrumbs">
 								<span class="mr-2"><a href="index">Home</a></span> <span>PortPoilo</span>
 							</p>
-							<h1 class="bread">Lumin PortPolio</h1>
+							<h1 class="bread">Lumin Blog</h1>
 						</div>
 					</div>
 				</div>
@@ -44,9 +44,8 @@
 											</div>
 											<p class="mb-4">2020년도 저의 삶을 공개합니다. 간략하게 2020년도는 공무원 시험 도전부터 현재는 공공데이터 인턴까지 다양한 도전들로 살아가고 있습니다.</p>
 											<div id="#AjaxButton"></div>
-											
-											<input type="button" id="checkBtn" class="btn btn-lg btn-primary btn-block"
-											 value="read More"></input>
+											<a href="blogPost?findPostId=P00000301"><input type="button" id="checkBtn" class="btn btn-lg btn-primary btn-block"
+											 value="read More"></input></a>
 											 
 											<!-- 
 											<a href="#" id="checkBtn">Read More</a>
@@ -292,6 +291,11 @@
 									<li><a href="#">Skill <span>(2)</span></a></li>
 									<li><a href="#">Photography <span>(7)</span></a></li>
 								</ul>
+								<br>
+								<h3 class="sidebar-heading">글 작성하기</h3>
+									<div class="tagcloud">
+									<a href="blogPost?findPostId=P00000301" class="tag-cloud-link">New Post</a>
+									</div>
 							</div>
 							<!-- 
 			    <div class="sidebar-box ftco-animate">

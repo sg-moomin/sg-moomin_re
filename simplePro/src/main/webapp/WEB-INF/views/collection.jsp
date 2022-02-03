@@ -17,12 +17,48 @@
 					<div class="row no-gutters slider-text justify-content-center align-items-center">
 	          <div class="col-md-8 ftco-animate">
 	            <p class="breadcrumbs"><span class="mr-2"><a href="index">Home</a></span> <span>Collection</span></p>
-	            <h1 class="bread">My Collection</h1>
+	            <h1 class="bread">My Portfolio Collection</h1>
 	          </div>
 	        </div>
 				</div>
 			</section>
-			<section class="ftco-section-3">
+			 <script type="text/javascript">
+	   		function autoSize()
+	   		{
+	   		 var the_height=
+	   			 document.getElementById('myframe').contentWindow.
+	   			 document.body.scrollHeight;
+
+	   			 //change the height of the iframe
+	   			 document.getElementById('myframe').height=
+	   			 the_height;
+
+	   			 //document.getElementById('the_iframe').scrolling = "no";
+	   			 document.getElementById('myframe').style.overflow = "hidden";
+	   		}
+	   		</script>
+			
+			<section class="ftco-section">
+				<div>
+						<h3 class="heading mb-3">세기 무민의 포트폴리오</h3>
+				</div>
+				<div>
+					<iframe 
+					id="myframe" 
+					width="100%" 
+					height="100%"
+					marginwidth="0" 
+					marginheight="0" 
+					frameborder="no"
+					onload="autoSize();"
+     				scroll="no"
+					src="resources/images/collection.pdf"
+					style="overflow-x:hidden; overflow:auto; width:100%; min-height:800px;"></iframe>
+				</div>
+			</section>						
+		<!--  
+		onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';"
+					
 				<div class="photograhy">
 					<div class="row">
 						<div class="col-md-4 ftco-animate">
@@ -136,8 +172,11 @@
 					</div>
 				</div>
 			</section>
+					-->
 	   </div>
 	   </div>
+	  
+	   
 		<%@include file="footer/footer.jsp"%>
   </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Louie - Free Bootstrap 4 Template by Colorlib</title>
     
 <%@include file="footer/bootstrap.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
   <body>
 
@@ -25,16 +26,38 @@
 			<section class="ftco-section">
 	      <div class="container">
 	        <div class="row">
+	          <c:forEach var="result" items="${myService}">
+	         	<div class="col-md-4 d-flex align-self-stretch ftco-animate">
+	            <div class="media block-6 services py-4 d-block">
+	              <div class="d-flex justify-content-start">
+	              	<div class="icon d-flex align-items-center justify-content-center">
+						<span class="profile-myService-img">
+						<a href="${result.urlroot}">
+							<img class="profile-myService" src="resources/images/${result.imgtitle}">
+						</a>
+						</span>
+				  	</div>
+	              </div>
+	              <div class="media-body p-2 mt-2">
+	                <h3 class="heading mb-3">${result.title}</h3>
+	                <p>${result.contents}</p>
+	              </div>
+	            </div>      
+	          </div>
+	          </c:forEach>
+	          
+	          
+	          <!-- 
 	          <div class="col-md-4 d-flex align-self-stretch ftco-animate">
 	            <div class="media block-6 services py-4 d-block">
 	              <div class="d-flex justify-content-start">
 	              	<div class="icon d-flex align-items-center justify-content-center">
-	              		<span class="flaticon-big-lens"></span>
-	              	</div>
+						<span class="flaticon-printing-photo"></span>
+				  	</div>
 	              </div>
 	              <div class="media-body p-2 mt-2">
-	                <h3 class="heading mb-3">Pounds Of Equipment</h3>
-	                <p>A small river named Duden flows by their place and supplies.</p>
+	                <h3 class="heading mb-3">네이버 맛집 블로거</h3>
+	                <p>현재 인스타에서 진행하는 포스팅을 좀 더 자세하게 다루고 있습니다.</p>
 	              </div>
 	            </div>      
 	          </div>
@@ -46,8 +69,8 @@
 	              	</div>
 	              </div>
 	              <div class="media-body p-2 mt-2">
-	                <h3 class="heading mb-3">Photo Print</h3>
-	                <p>A small river named Duden flows by their place and supplies.</p>
+	                <h3 class="heading mb-3">네이버 일상 블로거</h3>
+	                <p>취준부터 현재까지 저의 삶을 솔직하게 풀었습니다.</p>
 	              </div>
 	            </div>      
 	          </div>
@@ -59,7 +82,7 @@
 	              	</div>
 	              </div>
 	              <div class="media-body p-2 mt-2">
-	                <h3 class="heading mb-3">Client Focus</h3>
+	                <h3 class="heading mb-3">Tistory 기술 블로거</h3>
 	                <p>A small river named Duden flows by their place and supplies.</p>
 	              </div>
 	            </div>      
@@ -102,6 +125,7 @@
                 <p>A small river named Duden flows by their place and supplies.</p>
               </div>
             </div>
+             -->
           </div>
         </div>
 	    </section>

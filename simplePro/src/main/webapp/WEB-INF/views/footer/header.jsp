@@ -17,7 +17,7 @@
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					<li class="colorlib-active"><a href="index">Home</a></li>
-					<li><a href="collection">Collection</a></li>
+					<li><a href="collection">Portfolio Collection</a></li>
 					<li><a href="about">About Me</a></li>
 					<li><a href="services">My Services</a></li>
 					<li><a href="blog">Portfolio</a></li>

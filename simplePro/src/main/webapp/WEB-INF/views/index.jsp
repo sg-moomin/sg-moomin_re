@@ -9,8 +9,7 @@
 <%@include file="footer/bootstrap.jsp"%>
 </head>
 <body>
-
-	<div id="colorlib-page">
+ 	<div id="colorlib-page">
 		<%@include file="footer/header.jsp"%>
 		<!-- END COLORLIB-ASIDE -->
 		<div id="colorlib-main">
@@ -129,6 +128,19 @@
 			<%@include file="footer/footer.jsp"%>
 		</div>
 	</div>
+	
+	 	<div id="like_button_container"></div>
+	 
+	  <!-- React를 실행. -->
+	  <!-- 주의: 사이트를 배포할 때는 "development.js"를 "production.min.js"로 대체하세요. -->
+	  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	
+	  <!-- 만든 React 컴포넌트를 실행. -->
+	  <script src="js/like_button.js"></script>
+	  const domContainer = document.querySelector('#like_button_container');
+	  ReactDOM.render(e(LikeButton), domContainer);
+
 
 </body>
 </html>

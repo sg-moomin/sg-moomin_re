@@ -36,5 +36,23 @@
 <link rel="stylesheet" href="resources/css/flaticon.css">
 <link rel="stylesheet" href="resources/css/icomoon.css">
 <link rel="stylesheet" href="resources/css/style.css">
+
+
+<style>
+	.profile-myService-img{
+	width: 100px;
+	height: 100px;
+	border-radius: 70%;
+	overflow: hidden;
+	}
+	
+	.profile-myService{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	}
+
+</style>
+
 </head>
 </html>
