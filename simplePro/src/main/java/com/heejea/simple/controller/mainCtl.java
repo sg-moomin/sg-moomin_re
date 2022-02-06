@@ -57,24 +57,6 @@ public class mainCtl {
 		M.setViewName("index");
 		return M;
 	}
-
-	@RequestMapping(value="/blogDetail", method=RequestMethod.GET)
-	public ModelAndView blogDetail(ModelAndView M) {
-		System.out.println("blogDetail page");
-		M.setViewName("blogDetail");
-		
-		return M;
-	}
-	
-	@RequestMapping(value="/blogDetail", method=RequestMethod.POST)
-	public ModelAndView blogDetail(@RequestParam Map<String, Object> param, ModelAndView M){
-		System.out.println("Map test : " + param.toString());
-		//		System.out.print("test : " + deleteNumber);
-		System.out.println("blogDetail page");
-		M.setViewName("blogDetail");
-		
-		return M;
-	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView login(ModelAndView M) {
@@ -90,40 +72,6 @@ public class mainCtl {
 		
 		System.out.println("home page");
 		M.setViewName("about");
-		
-		return M;
-	}
-	
-	@RequestMapping(value="/blog", method=RequestMethod.POST)
-	public ModelAndView blog(ModelAndView M, @RequestParam Map<String, Object> param) {
-		System.out.println("blog test : " + param.toString());
-		M.setViewName("blogDetail");
-		
-		return M;
-	}
-	
-	@RequestMapping(value="/blog", method=RequestMethod.GET)
-	public ModelAndView blog(ModelAndView M) {
-		
-		System.out.println("blog page");
-		M.setViewName("blog");
-		
-		return M;
-	}
-	
-	
-	@ResponseBody
-	@RequestMapping(value="/blogPost", method=RequestMethod.GET)
-	public ModelAndView blogPost(ModelAndView M, String findPostId) {
-			
-		// List<blogPostEntity> result = blogPostEntitySvc.init();
-		List<blogPostEntity> result = blogPostEntitySvc.searchFindId(findPostId);
-		List<blogPostEntity> titles = blogPostEntitySvc.findByPostMainTitle();
-	
-		
-		M.addObject("myPost", result);
-		M.setViewName("blogPost");
-		
 		
 		return M;
 	}

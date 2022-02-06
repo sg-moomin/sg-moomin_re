@@ -25,7 +25,8 @@ import lombok.Setter;
 public class blogPostEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String postid;
 	
 	@Column(nullable = false, length = 500)
@@ -47,14 +48,18 @@ public class blogPostEntity {
 	@Column(nullable = false, length = 300)
 	private int postupperlvl;
 	// private int postupperlvl;
-
-	//	@Builder
-	public blogPostEntity(String postmaintitle, String postsntitle, String postsn, String posturl) {
-		this.postmaintitle = postmaintitle;
-		this.postsntitle = postsntitle;
-		this.postsn = postsn;
-		this.posturl = posturl;
-	}
 	
+	@Column(nullable = false)
+	private String regdt;
+
+	@Column(nullable = false, length = 50)
+	private String regid;
+
+	@Column(nullable = false)
+	private String uptdt;
+
+	@Column(nullable = false, length = 50)
+	private String uptid;
+
 }
 

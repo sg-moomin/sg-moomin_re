@@ -36,7 +36,7 @@ public class blogPostEntityServiceImpl implements blogPostEntityService {
 		List<blogPostEntity> postList = this.selectFindAllData();
 		for(blogPostEntity blogPost : postList) {
 			if(blogPost.getPostid().equals(findId)) {
-				blogPost.getPostsn().replace("\r\n", "<br>");
+				blogPost.setPostsn(blogPost.getPostsn().replace("\n", "<br>"));
 				System.out.println("blogPost ::::: " + blogPost.getPostsn());
 				
 				result.add(blogPost);

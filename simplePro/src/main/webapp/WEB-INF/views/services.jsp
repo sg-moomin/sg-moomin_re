@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Louie - Free Bootstrap 4 Template by Colorlib</title>
+<title>[sg-moomin] lumin_daily </title>
+
     
 <%@include file="footer/bootstrap.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

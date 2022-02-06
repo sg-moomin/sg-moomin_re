@@ -20,5 +20,8 @@ public interface blogPostRepository extends JpaRepository<blogPostEntity, Intege
 	@Query(value = "SELECT * FROM BlogPost where postmaintitle = :postMainTitle", nativeQuery = true)
 	List<blogPostEntity> findByPostMainTitle(@Param("postMainTitle") String postMainTitle);
 	
+	@Query(value = "SELECT max(postId) FROM blogpost order by postId desc", nativeQuery = true)
+	String selectMaxPostId(); 
+	
 	
 }

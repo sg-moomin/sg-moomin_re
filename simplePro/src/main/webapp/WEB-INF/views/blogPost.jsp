@@ -3,6 +3,7 @@
 <%@include file="footer/bootstrap.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
+<title>[sg-moomin] lumin_daily </title>
 <body>
 
 	<div id="colorlib-page">
@@ -77,11 +78,11 @@
 							</div>				
 							</div>
 			</section>
+	<%@include file="footer/footer.jsp"%>
 		</div>
 		<!-- END COLORLIB-MAIN -->
 	</div>
 	<!-- END COLORLIB-PAGE -->
-	<%@include file="footer/footer.jsp"%>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Louie - Free Bootstrap 4 Template by Colorlib</title>
+<title>[sg-moomin] lumin_daily </title>
     
 <%@include file="footer/bootstrap.jsp"%>
   </head>
@@ -22,7 +22,7 @@
 	        </div>
 				</div>
 			</section>
-			<section class="ftco-section contact-section">
+		<section class="ftco-section contact-section">
 	      <div class="container">
 	        <div class="row d-flex mb-5 contact-info">
 	          <div class="col-md-12 mb-4">

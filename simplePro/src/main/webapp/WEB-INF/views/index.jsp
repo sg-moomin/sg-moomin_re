@@ -5,7 +5,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<title>Lumin_Daily</title>
+<title>[sg-moomin] lumin_daily </title>
 <%@include file="footer/bootstrap.jsp"%>
 </head>
 <body>

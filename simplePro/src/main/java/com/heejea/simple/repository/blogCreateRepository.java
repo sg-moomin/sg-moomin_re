@@ -14,7 +14,7 @@ import com.heejea.simple.vo.blogVo;
 
 
 @Repository
-public interface blogRepository extends JpaRepository<blogEntity, Integer> {
+public interface blogCreateRepository extends JpaRepository<blogEntity, Integer> {
 
 	@Query(value = "SELECT * FROM blog order by blogid desc", nativeQuery = true)
 	List<blogEntity> init(); 

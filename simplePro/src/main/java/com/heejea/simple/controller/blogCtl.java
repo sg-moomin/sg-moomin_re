@@ -1,29 +1,30 @@
 package com.heejea.simple.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.heejea.simple.entity.*;
-import com.heejea.simple.repository.blogPostRepository;
-import com.heejea.simple.repository.myServiceRepository;
-import com.heejea.simple.repository.noticeboardRepository;
-import com.heejea.simple.repository.projectRepository;
+import com.heejea.simple.svc.blogCreateService;
+import com.heejea.simple.svc.blogEntityService;
 import com.heejea.simple.svc.blogPostEntityService;
 import com.heejea.simple.svc.myServiceEntityService;
 import com.heejea.simple.svc.profileEntityService;
+import com.heejea.simple.vo.blogVo;
 
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -31,22 +32,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class blogCtl {
 
-	private projectRepository pRepository;
-	private noticeboardRepository nRepository;
-	private myServiceRepository myRepository;
-	private blogPostRepository blogPostRepository;
-	
-	
 	@Autowired
 	public profileEntityService profileEntitySvc;
-	
 	@Autowired
 	public myServiceEntityService myServiceEntitySvc;
-	
-
 	@Autowired
 	public blogPostEntityService blogPostEntitySvc;
-	
+	@Autowired
+	public blogEntityService blogEntitySvc;
+	@Autowired
+	public blogCreateService blogCreateSvc;
 	
 	
 	@RequestMapping(value="/blogDetail", method=RequestMethod.GET)
@@ -67,7 +62,7 @@ public class blogCtl {
 		return M;
 	}
 	
-	
+	@ResponseBody
 	@RequestMapping(value="/blog", method=RequestMethod.POST)
 	public ModelAndView blog(ModelAndView M, @RequestParam Map<String, Object> param) {
 		System.out.println("blog test : " + param.toString());
@@ -76,10 +71,11 @@ public class blogCtl {
 		return M;
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/blog", method=RequestMethod.GET)
 	public ModelAndView blog(ModelAndView M) {
-		
-		System.out.println("blog page");
+		List<blogEntity> result = blogEntitySvc.init();
+		M.addObject("myBlog", result);
 		M.setViewName("blog");
 		
 		return M;
@@ -98,7 +94,26 @@ public class blogCtl {
 		M.addObject("myPost", result);
 		M.setViewName("blogPost");
 		
+		return M;
+	}
+	
+	@RequestMapping(value="/newPost", method=RequestMethod.GET)
+	public ModelAndView newPost(ModelAndView M) {
+		M.setViewName("newPost");
 		
 		return M;
 	}
+	
+	
+	@RequestMapping(value="/newPost", method=RequestMethod.POST)
+	@ResponseBody
+	public String newPost(ModelAndView M, @RequestBody Map<String, Object> param) throws IOException {
+		
+		blogVo result = blogCreateSvc.saveBlog(param);
+		return "blog";
+	}
+	
+	
+	
+	
 }

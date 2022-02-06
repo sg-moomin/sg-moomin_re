@@ -3,78 +3,48 @@ package com.heejea.simple.svc.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.heejea.simple.entity.blogPostEntity;
-import com.heejea.simple.entity.noticeboardEntity;
-import com.heejea.simple.repository.blogPostRepository;
-import com.heejea.simple.repository.noticeboardRepository;
-import com.heejea.simple.repository.projectRepository;
-import com.heejea.simple.svc.blogPostEntityService;
-import com.heejea.simple.svc.profileEntityService;
+import com.heejea.simple.entity.blogEntity;
+import com.heejea.simple.repository.blogRepository;
+import com.heejea.simple.svc.blogEntityService;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class blogEntityServiceImpl implements blogPostEntityService {
+public class blogEntityServiceImpl implements blogEntityService {
 	
-	final private blogPostRepository blogPostRepository;
-	
+	@Autowired
+	private blogRepository blogRepository;
+
 	@Override
-	public List<blogPostEntity> init() {
-		
-		List<blogPostEntity> result = this.selectFindAllData();
-		return result;
+	public List<blogEntity> init() {
+		List<blogEntity> blogList = new ArrayList<blogEntity>();
+		blogList = blogRepository.init();
+		return blogList;
 	}
 
 	@Override
-	public List<blogPostEntity> searchFindId(String findId) {
-	
-		List<blogPostEntity> result = new ArrayList<blogPostEntity>();
-		
-		List<blogPostEntity> postList = this.selectFindAllData();
-		for(blogPostEntity blogPost : postList) {
-			if(blogPost.getPostid().equals(findId)) {
-				blogPost.getPostsn().replace("\r\n", "<br>");
-				System.out.println("blogPost ::::: " + blogPost.getPostsn());
-				
-				result.add(blogPost);
-				break;
-			}
-		} 
-		
-		return result;
-	}
-
-	@Override
-	public blogPostEntity saveBlogPost() {
+	public List<blogEntity> searchFindId(String findId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void deleteBlogPost() {
+	public blogEntity saveBlog() {
 		// TODO Auto-generated method stub
-		
-	}
-	
-	
-	/**
-	 * FindAll 데이터 조회
-	 * */
-	private List<blogPostEntity> selectFindAllData(){
-		List<blogPostEntity> result = blogPostRepository.findAll();
-		return result;
+		return null;
 	}
 
 	@Override
-	public List<blogPostEntity> findByPostMainTitle() {
+	public void deleteBlog() {
+		// TODO Auto-generated method stub
 		
-		List<blogPostEntity> postList = new ArrayList<blogPostEntity>();
-		postList = blogPostRepository.findByPostMainTitle("2021 티스토리 테스트");
-		return postList;
 	}
+
+	
 
 	
 }

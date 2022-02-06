@@ -25,7 +25,8 @@ import lombok.Setter;
 public class blogEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false)
 	private String blogid;
 	
 	@Column(nullable = false, length = 500)
@@ -39,7 +40,10 @@ public class blogEntity {
 	
 	@Column(nullable = false, length = 100)
 	private String blogtag;
-
+	
+	@Column(nullable = false, length = 100)
+	private String imgtitle;
+	
 	@Column(nullable = false, length = 100)
 	private String postid;
 	
@@ -55,13 +59,14 @@ public class blogEntity {
 	@Column(nullable = false, length = 50)
 	private String uptid;
 
-	//	@Builder
-//	public blogEntity(String blogid, String blogmaintitle, String blogsntitle, String blogsn, String blogtag, String postid, String regdt, String regid, String uptdt, String uptid) {
+//	@Builder
+//	public blogEntity(String blogid, String blogmaintitle, String blogsntitle, String blogsn, String blogtag, String imgtitle, String postid, String regdt, String regid, String uptdt, String uptid) {
 //		this.blogid = blogid;
 //		this.blogmaintitle = blogmaintitle;
 //		this.blogsntitle = blogsntitle;
 //		this.blogsn = blogsn;
 //		this.blogtag = blogtag;
+//		this.imgtitle = imgtitle;
 //		this.postid = postid;
 //		this.regdt = regdt;
 //		this.regid = regid;
