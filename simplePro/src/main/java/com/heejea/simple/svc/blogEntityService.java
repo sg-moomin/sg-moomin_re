@@ -16,6 +16,7 @@ public interface blogEntityService {
 	public blogEntity saveBlog();
 	// 삭제
 	public void deleteBlog();
-	//
+	// 이미지 파일 찾기 
+	public String searchImgTitle(String findId);
 	
 }

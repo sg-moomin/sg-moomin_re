@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.heejea.simple.entity.blogEntity;
 import com.heejea.simple.entity.blogPostEntity;
 import com.heejea.simple.entity.noticeboardEntity;
 import com.heejea.simple.repository.blogPostRepository;
@@ -12,6 +13,7 @@ import com.heejea.simple.repository.noticeboardRepository;
 import com.heejea.simple.repository.projectRepository;
 import com.heejea.simple.svc.blogPostEntityService;
 import com.heejea.simple.svc.profileEntityService;
+import com.heejea.simple.vo.blogPostVo;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,22 +31,12 @@ public class blogPostEntityServiceImpl implements blogPostEntityService {
 	}
 
 	@Override
-	public List<blogPostEntity> searchFindId(String findId) {
+	public blogPostEntity searchFindId(String findId) {
 	
-		List<blogPostEntity> result = new ArrayList<blogPostEntity>();
-		
-		List<blogPostEntity> postList = this.selectFindAllData();
-		for(blogPostEntity blogPost : postList) {
-			if(blogPost.getPostid().equals(findId)) {
-				blogPost.setPostsn(blogPost.getPostsn().replace("\n", "<br>"));
-				System.out.println("blogPost ::::: " + blogPost.getPostsn());
-				
-				result.add(blogPost);
-				break;
-			}
-		} 
-		
+		blogPostEntity result = blogPostRepository.findIdSelect(findId);
+		result.setPostsn(result.getPostsn().replace("\n", "<br>"));
 		return result;
+
 	}
 
 	@Override

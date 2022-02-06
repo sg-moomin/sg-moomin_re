@@ -44,6 +44,12 @@ public class blogEntityServiceImpl implements blogEntityService {
 		
 	}
 
+	@Override
+	public String searchImgTitle(String findId) {
+		String result = blogRepository.selectImgTitle(findId);
+		return result;
+	}
+
 	
 
 	

@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.heejea.simple.entity.blogPostEntity;
+import com.heejea.simple.vo.blogPostVo;
 
 
 @Repository
@@ -22,6 +23,11 @@ public interface blogPostRepository extends JpaRepository<blogPostEntity, Intege
 	
 	@Query(value = "SELECT max(postId) FROM blogpost order by postId desc", nativeQuery = true)
 	String selectMaxPostId(); 
+	
+	@Query(value = "select * from blogPost where postId = :id", nativeQuery = true)
+	blogPostEntity findIdSelect(@Param("id") String findId);
+	
+	
 	
 	
 }

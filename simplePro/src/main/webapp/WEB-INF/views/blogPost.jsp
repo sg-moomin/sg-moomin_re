@@ -26,15 +26,13 @@
 			<section class="ftco-section">
 					<div class="row">
 						<div class="col-lg-8 ftco-animate">
-							<c:forEach var="myPosts" items="${myPost}">
-							<h2 class="mb-3 mt-5 font-weight-bold">${myPosts.postmaintitle}</h2>
-							<h3><p>${myPosts.postsntitle}</p></h3>
-							<h5><p>${myPosts.postsn}</p></h5>
+							<h2 class="mb-3 mt-5 font-weight-bold">${myPost.postMainTitle}</h2>
+							<h3><p>${myPost.postSnTitle}</p></h3>
+							<h5><p>${myPost.postSn}</p></h5>
 							<p>
-								<img src="resources/images/footerImage1.jpg" alt="" class="img-fluid">
+								<img src="resources/images/${myPost.imgTitle}" alt="" width="400" height="400" >
 							</p>
 							
-							</c:forEach>
 							<div class="tag-widget post-tag-container mb-5 mt-5">
 								<div class="tagcloud">
 									<a href="#" class="tag-cloud-link">Tistory</a> <a href="#"

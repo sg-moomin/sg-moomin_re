@@ -23,6 +23,7 @@ import com.heejea.simple.svc.blogEntityService;
 import com.heejea.simple.svc.blogPostEntityService;
 import com.heejea.simple.svc.myServiceEntityService;
 import com.heejea.simple.svc.profileEntityService;
+import com.heejea.simple.vo.blogPostVo;
 import com.heejea.simple.vo.blogVo;
 
 import lombok.RequiredArgsConstructor;
@@ -87,9 +88,17 @@ public class blogCtl {
 	public ModelAndView blogPost(ModelAndView M, String findPostId) {
 			
 		// List<blogPostEntity> result = blogPostEntitySvc.init();
-		List<blogPostEntity> result = blogPostEntitySvc.searchFindId(findPostId);
-		List<blogPostEntity> titles = blogPostEntitySvc.findByPostMainTitle();
-	
+		blogPostEntity post = blogPostEntitySvc.searchFindId(findPostId);
+		String imgtitle = blogEntitySvc.searchImgTitle(findPostId);
+
+		// blogPostVo 추가	
+		blogPostVo result = new blogPostVo();
+		result.setPostId(post.getPostid());
+		result.setPostMainTitle(post.getPostmaintitle());
+		result.setPostSn(post.getPostsn());
+		result.setPostSnTitle(post.getPostsntitle());
+		result.setPostUrl(post.getPosturl());
+		result.setImgTitle(imgtitle);
 		
 		M.addObject("myPost", result);
 		M.setViewName("blogPost");

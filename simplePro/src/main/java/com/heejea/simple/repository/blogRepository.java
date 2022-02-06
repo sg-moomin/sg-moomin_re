@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.heejea.simple.entity.blogEntity;
+import com.heejea.simple.entity.blogPostEntity;
 import com.heejea.simple.vo.blogVo;
 
 
@@ -22,13 +23,8 @@ public interface blogRepository extends JpaRepository<blogEntity, Integer> {
 	@Query(value = "SELECT max(blogId) FROM blog order by blogid desc", nativeQuery = true)
 	String selectMaxBlogId(); 
 	
-    @Modifying
-    @Query(value = "insert "
-    				+ "into "
-    				+ "blog (blogId, blogMainTitle, blogSn, blogSnTitle,  blogTag, imgTitle, postId, regDt, regId, uptDt, uptId) "
-    				+ "VALUES (:blogs.blogId, :,:id)", nativeQuery = true)
-    @Transactional
-    void saveBlog(@Param("blogs") blogVo blog);
-    
+	@Query(value = "select imgTitle from blog where postId = :id", nativeQuery = true)
+	String selectImgTitle(@Param("id") String findId);
 	
+    
 }
