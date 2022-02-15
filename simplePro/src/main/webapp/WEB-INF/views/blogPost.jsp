@@ -35,10 +35,16 @@
 							
 							<div class="tag-widget post-tag-container mb-5 mt-5">
 								<div class="tagcloud">
+									
+									<c:forEach var="tags" items="${tag}">
+										<a href="#" class="tag-cloud-link">${tags}</a>
+									</c:forEach>
+									<!-- 
 									<a href="#" class="tag-cloud-link">Tistory</a> <a href="#"
 										class="tag-cloud-link">Study</a> <a href="#"
 										class="tag-cloud-link">Jpa</a> <a href="#"
 										class="tag-cloud-link">Java</a>
+									 -->
 								</div>
 							</div>
 							<div class="about-author d-flex p-4 bg-light">

@@ -90,7 +90,10 @@ public class blogCtl {
 		// List<blogPostEntity> result = blogPostEntitySvc.init();
 		blogPostEntity post = blogPostEntitySvc.searchFindId(findPostId);
 		String imgtitle = blogEntitySvc.searchImgTitle(findPostId);
-
+		
+		String postId = post.getPostid();
+		// tage 조회
+		List<String> tag = blogEntitySvc.searchFindTag(postId);
 		// blogPostVo 추가	
 		blogPostVo result = new blogPostVo();
 		result.setPostId(post.getPostid());
@@ -100,7 +103,9 @@ public class blogCtl {
 		result.setPostUrl(post.getPosturl());
 		result.setImgTitle(imgtitle);
 		
+		
 		M.addObject("myPost", result);
+		M.addObject("tag", tag);
 		M.setViewName("blogPost");
 		
 		return M;

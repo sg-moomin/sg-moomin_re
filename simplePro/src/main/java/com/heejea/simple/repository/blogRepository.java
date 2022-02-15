@@ -26,5 +26,8 @@ public interface blogRepository extends JpaRepository<blogEntity, Integer> {
 	@Query(value = "select imgTitle from blog where postId = :id", nativeQuery = true)
 	String selectImgTitle(@Param("id") String findId);
 	
+	@Query(value = "select blogTag from blog where postId = :id", nativeQuery = true)
+	String searchFindTag(@Param("id") String findId);
+	
     
 }

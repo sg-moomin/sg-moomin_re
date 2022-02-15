@@ -34,6 +34,11 @@ public class blogPostEntityServiceImpl implements blogPostEntityService {
 	public blogPostEntity searchFindId(String findId) {
 	
 		blogPostEntity result = blogPostRepository.findIdSelect(findId);
+		
+		if(result == null) {
+			return null;
+		}
+		
 		result.setPostsn(result.getPostsn().replace("\n", "<br>"));
 		return result;
 

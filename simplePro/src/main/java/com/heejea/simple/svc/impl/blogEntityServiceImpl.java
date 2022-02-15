@@ -1,6 +1,7 @@
 package com.heejea.simple.svc.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +28,26 @@ public class blogEntityServiceImpl implements blogEntityService {
 	}
 
 	@Override
-	public List<blogEntity> searchFindId(String findId) {
+	public List<String> searchFindTag(String findId) {
 		// TODO Auto-generated method stub
-		return null;
+		List<String> result = new ArrayList<String>();
+		String tags = blogRepository.searchFindTag(findId);
+		
+//		System.out.println("test : " + tags);
+		
+		String[] lists =  tags.split("&");
+		
+		for(String str : lists) {
+			result.add(str);
+		}
+		
+//	Arrays 사용
+//		result.add(Arrays.toString(tags.split("&")));
+//		System.out.println("test : " + Arrays.toString(tags.split("&")));
+//		System.out.println("test : " + result.iterator().next());
+//		System.out.println("test : " + result.get(0));
+		
+		return result;
 	}
 
 	@Override

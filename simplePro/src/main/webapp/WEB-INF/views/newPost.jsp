@@ -55,7 +55,7 @@
 											placeholder="blogSnTitle & postSnTitle">
 									</div>
 									<div class="form-group">
-										<h5 class="koreanFont">블로그 포스트 태그</h5>
+										<h5 class="koreanFont">블로그 포스트 태그(구분 : &)</h5>
 										<input type="text" class="form-control" id="blogtag" name="blogtag" placeholder="blogTag&postTag">
 									</div>
 									<div class="form-group">

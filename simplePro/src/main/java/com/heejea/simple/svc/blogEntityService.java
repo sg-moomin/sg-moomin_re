@@ -10,8 +10,8 @@ public interface blogEntityService {
 	
 	// 전체 조회 
 	public List<blogEntity> init();
-	// ID 조회
-	public List<blogEntity> searchFindId(String findId);
+	// Tag 조회
+	public List<String> searchFindTag(String findId);
 	// 저장
 	public blogEntity saveBlog();
 	// 삭제
