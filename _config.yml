@@ -11,16 +11,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sg-moomin.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Social
-facebook: #Add your Facebook
-twitter: #Add your Twitter
-google-plus: #Add your Google+
-github: #Add your Github
+velog: https://velog.io/@sg-moomin
+github: https://github.com/sg-moomin
+tistory : https://sg-moomin.tistory.com/
 
 # Contact form
-email: #your-email@domain.com
+email: rooney9325@gmail.com
 
 # Comments
-discus-identifier: # Add your Disqus identifier
+discus-identifier: sg-moomin
 
 # Paginate
 paginate: 5
